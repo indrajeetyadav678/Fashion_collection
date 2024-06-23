@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 140vh;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    }
+
+    .success-icon {
+      font-size: 100px;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    button {
+      font-size: 1em;
+      color: white;
+      background-color: #4CAF50;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    button a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #itemtable {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid black;
+    }
+
+    #invoice_body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .invoice-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      font-size: 16px;
+      line-height: 24px;
+      color: #555;
+    }
+
+    .invoice-box table {
+      width: 100%;
+      line-height: inherit;
+      text-align: left;
+    }
+
+    .invoice-box table td {
+      padding: 5px;
+      vertical-align: top;
+    }
+
+    .invoice-box table tr td:nth-child(2) {
+      text-align: right;
+    }
+
+    .invoice-box table tr.top table td {
+      padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+    }
+
+    .invoice-box table tr.information table td {
+      padding-bottom: 40px;
+    }
+
+    .invoice-box table tr.heading td {
+      background: #eee;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    .invoice-box table tr.details td {
+      padding-bottom: 20px;
+    }
+
+    .invoice-box table tr.item td {
+      border-bottom: 1px solid #eee;
+    }
+
+    .invoice-box table tr.item.last td {
+      border-bottom: none;
+    }
+
+    .invoice-box table tr.total td:nth-child(2) {
+      border-top: 2px solid #eee;
+      font-weight: bold;
+    }
+
+    .button-like {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .button-like:hover {
+      background-color: #0056b3;
+    }
+
+    #pdf_downloadbtn {
+      color: rgb(21, 21, 100)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="invoice_body">
+      <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+          <tr class="top">
+            <td colspan="2">
+              <table>
+                <tr>
+                  <td class="title">
+                    <img src="https://www.brandbucket.com/sites/default/files/logo_uploads/167474/large_trendgenix_0.png"
+                      style="width:100px;">
+                  </td>
+                  <td>
+                    Invoice ID: inv_OO9Ge3GZR3aX0M<br>
+                    Payment ID: pay_OO9GLvtmYuWfUk<br>
+                    Order ID :order_OO9Ch9zsa3QL3n<br />
+                    Date: June 18, 2024, 7:54 a.m.<br>
+                    Status: Paid<br>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="information">
+            <td colspan="2">
+              <table>
+                <tr>
+                  <td>
+                    <h4>Billing Address</h4>
+                    Name : sumit jadon<br />
+                    Email : sumitjadon026@gmail.com<br />
+                    Contact : 8976543478<br />
+                    Address : Aliya Maholla Sarswati Nagar Vidish Madhya Pradesh<br />
+                    Zipcode :464001 <br />
+                  </td>
+                  <td>
+                    <h4>Shipping Address</h4>
+                    Name : sumit jadon<br />
+                    Email : sumitjadon026@gmail.com<br />
+                    Contact : 8976543478<br />
+                    Address : Aliya Maholla Sarswati Nagar Vidish Madhya Pradesh<br />
+                    Zipcode :464001 <br />
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr class="heading">
+            <td>Payment Method</td>
+            <td>wallet</td>
+          </tr>
+          
+          <tr class="heading">
+            <td>Item</td>
+            <td>Price</td>
+          </tr>
+
+          
+          <tr>
+            <td>PATCHWORK PRINT MINI DRESS</td>
+            <td>Rs&nbsp;&nbsp;2840.00/-</td>
+          </tr>
+          
+          <tr>
+            <td>MINI PAREO SKIRT WITH FRETWORK AND FLORAL PRINT</td>
+            <td>Rs&nbsp;&nbsp;2212.00/-</td>
+          </tr>
+          
+          <tr>
+            <td>Casual T-Shirt With Half Sleeves And Spread Collar</td>
+            <td>Rs&nbsp;&nbsp;692.00/-</td>
+          </tr>
+          
+          <tr class="total" style="background-color: #d9e3e0;">
+            <td>Total Amount:</td>
+            <td>Rs&nbsp;&nbsp;5744.00/-</td>
+          </tr>
+        </table>
+      </div>
+    </div><br /><br />
+    <div id="pdf_downbtn" style="display: none;">
+      <a id="downloadLink" href="/invoice_load/order_OO9Ch9zsa3QL3n/">Download invoice</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const downloadLink = document.getElementById('downloadLink');
+      if (downloadLink) {
+        downloadLink.click();
+      }
+
+      const paymentData = 'order_OO9Ch9zsa3QL3n';
+      if (paymentData) {
+        window.confirm(
+          "Thank you for your purchase. Your payment has been processed successfully"
+        );
+      }
+    });
+  </script>
+</body>
+
+</html>
